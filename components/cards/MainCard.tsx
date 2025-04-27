@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Card from "../Card";
@@ -30,7 +30,7 @@ export default function MainCard({
 
         <View style={styles.statsContainer}>
           <View style={styles.icon}>
-            <MaterialCommunityIcons name="sword" size={24} color="black" />
+            <MaterialCommunityIcons name="sword" size={36} color="black" />
           </View>
 
           <View style={styles.statsRight}>
@@ -43,9 +43,8 @@ export default function MainCard({
             <Text>{hp} / 1500 HP</Text>
           </View>
         </View>
-
         <View style={styles.footer}>
-          <Text>{damageDone} Damage Done</Text>
+          <Text style={styles.footerText}>{damageDone} Damage Done</Text>
         </View>
       </View>
     </Card>
@@ -56,6 +55,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     gap: 16,
+    position: "relative",
+    paddingBottom: 40,
   },
   statsContainer: {
     flexDirection: "row",
@@ -82,7 +83,21 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     position: "absolute",
   },
+
   footer: {
     backgroundColor: "rgb(255 166 36)",
+    width: Dimensions.get("screen").width - 32,
+    height: 40,
+    padding: 10,
+    borderEndEndRadius: 10,
+    borderStartEndRadius: 10,
+    position: "absolute",
+    bottom: -16,
+    alignItems: "center",
+  },
+
+  footerText: {
+    color: "white",
+    fontWeight: "600",
   },
 });

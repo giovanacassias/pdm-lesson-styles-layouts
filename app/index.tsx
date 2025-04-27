@@ -7,6 +7,7 @@ import ScreenWrapper from "@/components/ScreenWrapper";
 import Card from "@/components/Card";
 import Title from "@/components/Title";
 import MainCard from "@/components/cards/MainCard";
+import MemberCard from "@/components/cards/MemberCard";
 
 export default function index() {
   return (
@@ -23,12 +24,20 @@ export default function index() {
       <Title>MEMBERS</Title>
 
       <Card>
-        <Text>index</Text>
+        <Text>Invite a member</Text>
       </Card>
 
       <Card>
         <Text>index</Text>
       </Card>
+
+      <MemberCard
+        imageUrl="https://imgv3.fotor.com/images/gallery/An-elf-with-white-hair.jpg"
+        name="Sophiala"
+        username="@bestieee"
+        level={12}
+        position="Leader"
+      />
     </ScreenWrapper>
   );
 }
