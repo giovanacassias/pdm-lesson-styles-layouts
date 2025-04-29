@@ -27,10 +27,34 @@ export default function MemberCard({
           <Image source={{ uri: imageUrl }} style={styles.img} />
         </View>
         <View style={styles.cardInfo}>
-          <Text>{name}</Text>
-          <Text>{username}</Text>
-          <Text>Level {level}</Text>
-          <Text>{position}</Text>
+          <View style={styles.headerCard}>
+            <View style={styles.nameUsername}>
+              <Text style={styles.nameText}>{name}</Text>
+              <Text style={styles.usernameText}>{username}</Text>
+            </View>
+            <View style={styles.hearderIcons}>
+              <Image
+                source={require("../../assets/images/blue-sword2.png")}
+                style={styles.swordIcon}
+              />
+              <Image
+                source={require("../../assets/images/arrow-up.png")}
+                style={styles.swordIcon}
+              />
+            </View>
+          </View>
+          <View style={styles.barDiv}>
+            <View style={styles.barContainer}>
+              <View style={{ ...styles.bar, width: "100%" }} />
+            </View>
+            <View style={styles.barContainer}>
+              <View style={[styles.bar, styles.blueBar]} />
+            </View>
+          </View>
+          <View style={styles.levelContainer}>
+            <Text style={styles.levelText}>Level{level}</Text>
+            <Text style={styles.levelText}>{position}</Text>
+          </View>
         </View>
       </View>
     </Card>
@@ -40,12 +64,10 @@ export default function MemberCard({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "red",
     height: 120,
   },
 
   cardImg: {
-    backgroundColor: "yellow",
     width: "35%",
     height: "100%",
     alignItems: "center",
@@ -58,9 +80,79 @@ const styles = StyleSheet.create({
   },
 
   cardInfo: {
-    backgroundColor: "green",
     width: "65%",
     height: "100%",
-    padding: 20,
+    padding: 10,
+  },
+
+  nameText: {
+    fontWeight: "800",
+  },
+
+  usernameText: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: "#909090",
+    marginBottom: 8,
+  },
+
+  barDiv: {
+    flexDirection: "column",
+    gap: 8,
+  },
+
+  barContainer: {
+    width: "100%",
+    height: 5,
+    borderRadius: 4,
+    backgroundColor: "rgb(225 224 227)",
+    position: "relative",
+  },
+
+  bar: {
+    backgroundColor: "rgb(255 97 101)",
+    height: 5,
+    borderRadius: 8,
+    position: "absolute",
+    width: "100%",
+  },
+
+  blueBar: {
+    backgroundColor: "#1a9cb8",
+    width: "70%",
+  },
+
+  levelContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 5,
+  },
+
+  levelText: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: "#909090",
+  },
+
+  headerCard: {
+    flexDirection: "row",
+    marginBottom: 5,
+  },
+
+  nameUsername: {
+    flexDirection: "column",
+    width: "70%",
+  },
+
+  hearderIcons: {
+    width: "30%",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    flexDirection: "row",
+  },
+
+  swordIcon: {
+    height: 25,
+    width: 25,
   },
 });

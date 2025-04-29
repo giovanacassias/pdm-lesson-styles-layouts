@@ -15,7 +15,7 @@ export default function index() {
       <MainCard
         title="Vice Awakens"
         participating={3}
-        imgUrl="https://cdn-icons-png.flaticon.com/512/2603/2603009.png"
+        imgUrl="https://res.cloudinary.com/ddb437lsi/image/upload/v1745783465/dragon.webp"
         name="Vice, The Shadow Wyrm"
         hp={1224}
         damageDone={21}
@@ -23,18 +23,34 @@ export default function index() {
 
       <Title>MEMBERS</Title>
 
-      <Card>
-        <Text>Invite a member</Text>
-      </Card>
-
-      <Card>
-        <Text>index</Text>
-      </Card>
-
       <MemberCard
         imageUrl="https://imgv3.fotor.com/images/gallery/An-elf-with-white-hair.jpg"
         name="Sophiala"
         username="@bestieee"
+        level={20}
+        position="Master"
+      />
+
+      <MemberCard
+        imageUrl="https://i.pinimg.com/236x/ee/ce/5c/eece5cfa9b28a32c5a756fde1515df66.jpg"
+        name="Aidowu"
+        username="@getthatbread"
+        level={12}
+        position="Leader"
+      />
+
+      <MemberCard
+        imageUrl="https://i.pinimg.com/236x/ee/ce/5c/eece5cfa9b28a32c5a756fde1515df66.jpg"
+        name="Aidowu"
+        username="@getthatbread"
+        level={12}
+        position="Leader"
+      />
+
+      <MemberCard
+        imageUrl="https://i.pinimg.com/236x/ee/ce/5c/eece5cfa9b28a32c5a756fde1515df66.jpg"
+        name="Aidowu"
+        username="@getthatbread"
         level={12}
         position="Leader"
       />

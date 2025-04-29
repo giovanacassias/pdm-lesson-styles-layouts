@@ -8,6 +8,7 @@ import {
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Stack } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { ScrollView } from "react-native";
 
 type ScreenWrapperProps = {
   title: string;
@@ -15,24 +16,26 @@ type ScreenWrapperProps = {
 
 export default function ScreenWrapper({ title, children }: ScreenWrapperProps) {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      <Stack.Screen
-        options={{
-          title,
-          headerRight: () => (
-            <TouchableOpacity>
-              <MaterialCommunityIcons name="menu" size={24} color="black" />
-            </TouchableOpacity>
-          ),
-          contentStyle: {
-            backgroundColor: "white",
-          },
-        }}
-      />
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar barStyle="light-content" />
+        <Stack.Screen
+          options={{
+            title,
+            headerRight: () => (
+              <TouchableOpacity>
+                <MaterialCommunityIcons name="menu" size={24} color="black" />
+              </TouchableOpacity>
+            ),
+            contentStyle: {
+              backgroundColor: "white",
+            },
+          }}
+        />
 
-      {children}
-    </View>
+        {children}
+      </View>
+    </ScrollView>
   );
 }
 

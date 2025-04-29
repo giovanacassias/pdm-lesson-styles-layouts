@@ -23,10 +23,14 @@ export default function MainCard({
   return (
     <Card>
       <View style={styles.container}>
-        <Text>{title}</Text>
-        <Text>{participating}/10 Participating</Text>
+        <View style={styles.cardHearder}>
+          <Text style={styles.cardTitle}>{title}</Text>
+          <Text style={styles.seconderyText}>
+            {participating}/10 Participating
+          </Text>
+        </View>
 
-        <Image source={{ uri: imgUrl }} width={100} height={100} />
+        <Image source={{ uri: imgUrl }} width={150} height={150} />
 
         <View style={styles.statsContainer}>
           <View style={styles.icon}>
@@ -34,13 +38,13 @@ export default function MainCard({
           </View>
 
           <View style={styles.statsRight}>
-            <Text>{name}</Text>
+            <Text style={styles.primaryText}>{name}</Text>
 
             <View style={styles.barContainer}>
               <View style={{ ...styles.bar, width: "80%" }} />
             </View>
 
-            <Text>{hp} / 1500 HP</Text>
+            <Text style={styles.seconderyText}>{hp} / 1500 HP</Text>
           </View>
         </View>
         <View style={styles.footer}>
@@ -82,6 +86,26 @@ const styles = StyleSheet.create({
     height: 8,
     borderRadius: 4,
     position: "absolute",
+  },
+
+  cardHearder: {
+    width: "100%",
+    alignItems: "center",
+  },
+
+  cardTitle: {
+    fontWeight: "800",
+    fontSize: 18,
+  },
+
+  primaryText: {
+    fontWeight: "800",
+  },
+
+  seconderyText: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: "#909090",
   },
 
   footer: {
